@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/footlogo.png">
+    <title>FootFiesta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            margin: 20px; 
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s; 
+        }
+        
+        .button:hover {
+            background-color: #45a049;
+        }
+        
+        .button-goback {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        
+        .button-goback:hover {
+            background-color: #005f6b;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="loginseller.html" class="button button-goback">Logout</a>
+    
+    <div class="container">
+        <h1>PRODUCT</h1>
+        <a href="padd.php" class="button">Product Add</a>
+        <a href="pupdate.php" class="button">Product Update</a>
+        <a href="psearch.php" class="button">Product View</a>
+        <a href="pdelete.php" class="button">Product Delete</a>
+        
+    </div>
+    
+      
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Homepagee.css">
+    <link rel="shortcut icon" href="image/footlogo.png">
+    <title>FootFiesta</title>
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+      
+      
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      
+      
+     
+      
+      button:hover {
+        opacity: 0.8;
+      }
+      
+      
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+      
+      
+      .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+      }
+      
+      img.avatar {
+        width: 40%;
+        border-radius: 50%;
+      }
+      
+      .container {
+        padding: 16px;
+      }
+      
+      span.psw {
+        float: right;
+        padding-top: 16px;
+      }
+      
+      
+      .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+        padding-top: 60px;
+      }
+      
+      
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; 
+        border: 1px solid #888;
+        width: 80%; 
+      }
+      
+     
+      .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: red;
+        cursor: pointer;
+      }
+      
+      
+      .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+      }
+      
+      .logo {
+        background-color: #04AA6D;
+        color: white;
+        padding: 4px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+      }
+        
+      @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+      }
+      
+     
+      @media screen and (max-width: 300px) {
+        span.psw {
+           display: block;
+           float: none;
+        }
+        .cancelbtn {
+           width: 100%;
+        }
+      }
+      #type {
+        width: 200px; 
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    
+    #type option {
+        background-color: #fff;
+        color: #000;
+    }
+      </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="Image/foot.png" width="100" height="30"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Product">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#sale">Sale</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#brand">Brand</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#About">About Us</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#Servises">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Contactus">Contact Us</a>
+              </li>
+              
+            </ul>
+              <div class="cart-user">
+                
+
+
+                <button onclick="document.getElementById('sellerModal').style.display='block'" class="logo" style="width:auto ;">Seller</button>
+
+                <div id="sellerModal" class="modal">
+                    <form class="modal-content animate" action="loginseller.php" method="post">
+                        <center><h2>Login For Workers</h2></center>
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="username" required>
+                
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="userpassword" required>
+                            <select id="type" name="type" required>
+                                <option value="seller">Seller</option>
+                                <option value="manager">Manager</option>
+                            </select>
+                            <button type="submit" class="logo">Login</button>
+                        </div>
+                
+                        <div class="container" style="background-color:#f1f1f1">
+                            <span class="psw">Create <a href="registerseller.php"> Account?</a></span>
+                        </div>
+                    </form>
+                </div>
+                
+                <button onclick="document.getElementById('userModal').style.display='block'" style="width:auto;" class="logo">Login</button>
+                
+                <div id="userModal" class="modal">
+                    <form class="modal-content animate" action="Login.php" method="post">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('userModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        </div>
+                
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="username" required>
+                
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="userpassword" required>
+                
+                            <button type="submit" class="logo">Login</button>
+                        </div>
+                
+                        <div class="container" style="background-color:#f1f1f1">
+                            <span class="psw">Create <a href="cregistration.php">Account?</a></span>
+                        </div>
+                    </form>
+                </div>
+                
+                <script>
+                    
+                    var sellerModal = document.getElementById('sellerModal');
+                    var userModal = document.getElementById('userModal');
+                
+                    
+                    window.onclick = function(event) {
+                        if (event.target == sellerModal) {
+                            sellerModal.style.display = "none";
+                        }
+                        if (event.target == userModal) {
+                            userModal.style.display = "none";
+                        }
+                    }
+                </script>
+                
+                </div></div>   
+               
+              
+              
+              
+        
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="hero-section">
+        <video src="video/ffvideo.mp4" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" classs="background-clip"></video>
+        <div class="hero-text">
+          <h1>Discover Our Collection</h1>
+          <button class="buynow" onclick="redirectToNewPage()">Buy Now</button>
+        </div>
+      </div>
+      <script>
+        function redirectToNewPage() {
+         
+          window.location.href = "#Product";
+        }
+      </script>
+      
+    
+
+     
+      <div class="Product" id="Product">
+            <h1 id="Product" class="text-center p-5 mb-5 mt-5"><b>Product</b></h1>
+            <div class="product-slider">
+              <div class="row">
+                <!--shoes 1 -->
+                <div class="col">
+                <div class="card" >
+                <img src="Image/shoes.png" class="card-img-top" width="500" height="300" alt="shoes" >
+                <div class="card-body">
+                <h5 class="card-title">Nike</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h6><del>Rs 5999.99</del></h6>
+                <H4>Rs 4999.99</H4>
+                <a href="Login.html" class="btn btn-primary">Buy Now</a>
+                </div>
+                </div>
+                </div>
+                
+                <!--shoes 2 -->
+                <div class="col">
+                  <div class="card" >
+                  <img src="Image/shoes2.png" class="card-img-top" width="500" height="300" alt="shoes" >
+                  <div class="card-body">
+                  <h5 class="card-title">Nike</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h6><del>Rs 7999.99</del></h6>
+                  <H4>Rs 6999.99</H4>
+                  <a href="Login.html" class="btn btn-primary">Buy Now</a>
+                  </div>
+                  </div>
+                  </div>
+                
+                <!--shoes 3 -->
+                <div class="col">
+                  <div class="card" >
+                  <img src="Image/shoes1.png" class="card-img-top" width="500" height="300" alt="shoes" >
+                  <div class="card-body">
+                  <h5 class="card-title">Nike</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h6><del>Rs 8999.99</del></h6>
+                  <H4>Rs 7999.99</H4>
+                  <a href="Login.html" class="btn btn-primary">Buy Now</a>
+                  </div>
+                  </div>
+                  </div>
+  
+                  <!--shoes 4 -->
+                  <div class="col">
+                    <div class="card" >
+                    <img src="Image/shoes3.png" class="card-img-top" width="500" height="300" alt="shoes" >
+                    <div class="card-body">
+                    <h5 class="card-title">Nike</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h6><del>Rs 6999.99</del></h6>
+                  <H4>Rs 5999.99</H4>
+                    <a href="Login.html" class="btn btn-primary">Buy Now</a>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!--add -->
+        <div class="sale" id="sale">
+          <h1 id="sale" class="text-center p-5 mb-5 mt-5"><b>HOT SALE !</b></h1>
+      </div>
+        <div class="add-container">
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="image/add/add1.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add4.jpg" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add3.jpg" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+            </div>
+            
+          </div>
+  
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="image/add/add2.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add5.jpg" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add6.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+            </div>
+            
+          </div>
+  
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="image/add/add7.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add8.jpg" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add9.jpg" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+            </div>
+            
+          </div>
+  
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="image/add/add11.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add13.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="image/add/add12.png" class="d-block w-100" style="height: 555px; width: 1080px" alt="...">
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="brand" id="brand">
+          <h1 id="brand" class="text-center p-5 mb-5 mt-5"><b>BRANDS</b></h1>
+      </div>
+      <div class="card-group">
+        <div class="card">
+          <center>
+            <img src="image/logo/waves.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+        <div class="card"><center>
+          <img src="image/logo/reebok.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+        <div class="card">
+          <center>
+            <img src="image/logo/puma.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+        <div class="card">
+          <center>
+            <img src="image/logo/fila.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+        <div class="card">
+          <center>
+            <img src="image/logo/disney.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+        <div class="card">
+          <center>
+            <img src="image/logo/logoa.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+        <div class="card">
+          <center>
+            <img src="image/logo/logon.png" class="card-img-top" style="height: 70px; width: 70px" alt="brand"></center>
+          
+        </div>
+      </div>
+
+
+
+      <div class="container"> <!-- main container -->
+        <div class="About" id="About">
+            <h1 id="About" class="text-center p-5 mb-5 mt-5"><b>ABOUT US</b></h1>
+        </div>
+        
+    
+      <div class="w-100 bg-dark-subtle p-5 m-5">
+        <p>At Foot Fiesta, we step into the world of fashion with a passion for footwear. Our journey began with a simple goal: to provide stylish, comfortable, and quality shoes that not only elevate your style but also take care of your feet.We understand that shoes are more than just accessories; they are an essential part of your daily life. That's why we strive to create footwear that seamlessly blends fashion and functionality. Each pair of shoes we design is a testament to our commitment to craftsmanship and innovation.
+
+        <p>Our team of skilled artisans and designers work tirelessly to bring you a diverse collection of shoes, ranging from casual everyday wear to sophisticated formal styles. We take pride in using premium materials to ensure durability and comfort, so you can confidently stride through every step of your journey.</p>
+
+        <p>At Foot Fiesta, we also believe in responsible and sustainable practices. We are dedicated to minimizing our environmental footprint by sourcing eco-friendly materials and adopting ethical manufacturing processes. Your style choices should not only reflect your personality but also contribute to a greener and more sustainable planet.
+
+        Thank you for choosing Foot Fiesta as your go-to destination for stylish and reliable footwear. We look forward to being a part of your fashion journey, one step at a time.</p>
+       </div>
+
+      <div class="services" id="Servises">
+        <h1><b>OUR SERVICES</b></h1>
+
+        <div class="services_cards">
+            <div class="services_box">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>We are excited to inform you that we take pride in our commitment to fast and efficient delivery services. Your satisfaction is our top priority, and we understand the importance of receiving your order promptly.</p>
+            </div>
+
+            <div class="services_box">
+                <i class="fa-solid fa-rotate-left"></i>
+                <h3>7 Days Exchange policy</h3>
+                <p>We understand that sometimes preferences may change, and we want to ensure your complete satisfaction with your purchase. Therefore, we offer a straightforward exchange policy to make your shopping experience as smooth as possible.</p>
+                
+            </div>
+
+            <div class="services_box">
+                <i class="fa-solid fa-headset"></i>
+                <h3>Customer Service</h3>
+                <p>Thank you for choosing Foot Fiesta! Our dedicated customer service team is here to assist you with any questions, concerns, or inquiries you may have. We strive to provide excellent service and ensure your satisfaction with our products and services.</p>
+            </div>
+        </div>
+        <div class="Contactus" id="Contactus">
+          <h1 id="Contactus" class="text-center p-5 mb-5 mt-5"><b>CONTACT US</b></h1>
+
+<div class="contact container">
+  <form action="contactus.php" method="post">
+    <label for="fname"><b>First Name</b></label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country"><b>Country</b></label>
+    <select id="country" name="country">
+      <option value="australia">Sri Lanka</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject"><b>Subject</b></label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" name="submit" value="Submit">
+    
+  </form>
+</div>
+
+
+      </div>
+    </div>
+
+    
+
+        <footer>
+          <div class="footer-left">
+            <h3><b>Contact Us</b></h3>
+            <p>123 Galle Road, Matara, Sri Lanka.</p>
+            <p>Phone: +94774631294</p>
+            <p>Email: footfiesta@gmail.com</p>
+          </div>
+          <div class="footer-middle">
+            <h3><b>Follow Us</b></h3>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i> footfiesta/facebook.com</a>
+                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i> footfiesta/twitter.com</a>
+                    <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i> footfiesta/instagram.com</a>
+                    <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i> footfiesta/linkedin.com</a>
+          </div>
+          <div class="footer-right">
+            <p> &copy; Foot Fiesta. All rights reserved.</p>
+          </div>
+        </footer>
+
+        
+</body>
+</html>

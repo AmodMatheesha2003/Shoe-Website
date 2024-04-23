@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="Loginvalid.js"></script>
+    <link rel="stylesheet" href="Login.css">
+    <link rel="shortcut icon" href="image/footlogo.png">
+    <title>FootFiesta</title>
+    <style>
+        .button-goback {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .button-goback:hover {
+            background-color: #005f6b;
+        }
+    </style>
+</head>
+<body>
+    <form name="myform" action="Login.php" method="POST" >
+        <h1>Login </h1>
+        <label>USERNAME</label>
+        <input type="text" id="username" name="username" required><br>
+        <label>PASSWORD</label>
+        <input type="password" id="userpassword" name="userpassword" required><br>
+        
+        <input type="submit" id="submit1" value="SUBMIT"><br>
+        <h6><center>OR</center></h6>
+        <a href="cregistration.php">Create Account</a> 
+        
+    </form>
+</body>
+</html>

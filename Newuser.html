@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Newuser.css">
+    <link rel="shortcut icon" href="image/footlogo.png">
+    <title>FootFiesta</title>
+</head>
+<body>
+    <form name="formregister" action="addseller.php" method="POST" onsubmit="return validateForm()">
+        <h1>Register Form</h1>
+        <label>First Name</label>
+        <input type="text" id="firstname" name="firstname" oninput="updateUsername()" required><br>
+        <label>Last Name</label>
+        <input type="text" id="lastname" name="lastname" oninput="updateUsername()" required><br>
+        <label>USERNAME</label>
+        <input type="text" id="username" name="username" readonly required><br>
+        <label>PASSWORD</label>
+        <input type="password" id="password" name="password" required><br>
+        <label>Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" oninput="validatePassword()" required><br>
+        <label>NIC</label>
+        <input type="text" id="NIC" name="NIC" required><br>
+        <label>Type</label>
+        <select id="type" name="type" required>
+            <option value="seller">Coustomer</option>
+            <option value="manager">Seller</option>
+        </select><br>
+        <input type="submit" id="submit2" value="SUBMIT"><br>
+    </form>
+
+    <script>
+        function updateUsername() {
+            var firstname = document.getElementById('firstname').value;
+            var lastname = document.getElementById('lastname').value;
+            var username = (firstname + lastname).toLowerCase(); 
+            document.getElementById('username').value = username;
+        }
+
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            var confirm_password = document.getElementById('confirm_password').value;
+            var error_message = document.getElementById('error_message');
+
+            if (password != confirm_password) {
+                error_message.innerHTML = "Passwords do not match";
+            } else {
+                error_message.innerHTML = "";
+            }
+        }
+
+        function validateForm() {
+            var password = document.getElementById('password').value;
+            var confirm_password = document.getElementById('confirm_password').value;
+            var error_message = document.getElementById('error_message');
+
+            if (password != confirm_password) {
+                error_message.innerHTML = "Passwords do not match";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+h1{font-size: 60px;}
+
+.card {
+    border: 2px solid #ac1495;
+    border-radius: 10px; 
+    overflow: hidden; 
+  }
+
+  
+  .card-body {
+    border-top: 1px solid #ac1495; 
+    padding: 15px; 
+  }
+
+
+
+  .cart-user{
+    display: flex;
+    align-items: center;
+  }
